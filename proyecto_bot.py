@@ -33,39 +33,59 @@ input_phrase = input("Ingrese su frase a continuacion: ")
 
 keywords = ["medicina", "gatos", "comida", "ciencia"] #Lista
 
-opciones = [["Opciones de medicina 0", "Opciones de medicina 1"], ["Opciones de gatos"], ["Opciones de comida"], ["Opciones de ciencia"]]
+#Medicina es el elemento 0 de la lista keywords -> Las opciones de medicina van a ser el elemento 0 en la lista opciones
+
+opciones = [["Opciones de medicina 0", "Opciones de medicina 1"], ["Gatos siameses", "Alergia a gatos", "Gatos o perros"], ["Opciones de comida"], ["Opciones de ciencia"]]
+
 
 #Acceder a un elemnto de la lista keywords[posicion de la palabra]
 
 #Modo burdo
 
-if(keywords[0] in input_phrase): #medicina esta en la frase
+#if(keywords[0] in input_phrase): #medicina esta en la frase
     #print(opciones[0])
-    pass
+  
 
-if(keywords[1] in input_phrase):
+#if(keywords[1] in input_phrase):
     #print(opciones[1][0])
-    pass
+ 
 
-if(keywords[2] in input_phrase):
+#if(keywords[2] in input_phrase):
     #print(opciones[2][0])
-    pass
 
 
-if(keywords[3] in input_phrase):
+
+#if(keywords[3] in input_phrase):
     #print(opciones[3][0])
-    pass
 
 #Modo eficiente
 
-#Ciclos y recorrer
+print("Las opciones de conversacion son las siguientes:\n\n")
 
-i = 0 #Variable de control
+w = 1 
+
+for j in range(len(keywords)):
+    if(keywords[j] in input_phrase):
+        print(str(w) + " Opciones de " + keywords[j] + ":\n")
+        w = w + 1
+        for k in opciones[j]:
+            print("  " + k)
+        print("\n")    
 
 
-while(i < len(keywords)):
+opcion_elegida = input("¿De que tema quieres hablar? \n" )
+while(!#se un numero entre 1 y 3 (de haber 3 keywords en su input_phrase) y que sea un número en texto. ): 
+    opcion_elegida = input("Porfavor ingrese un numero que este dentro de las opciones: \n" )
 
-    i = i + 1
 
-for i in range(10):
-    #instrucciones
+
+
+
+
+
+
+
+
+
+
+
