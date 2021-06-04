@@ -72,15 +72,16 @@ for j in range(len(keywords)):
             print("  " + k)
         print("\n")    
 
+opcion_elegida = input("¿De que tema quieres hablar:? \n" )
 
-opcion_elegida = input("¿De que tema quieres hablar? \n" )
-while(!#se un numero entre 1 y 3 (de haber 3 keywords en su input_phrase) y que sea un número en texto. ): 
-    opcion_elegida = input("Porfavor ingrese un numero que este dentro de las opciones: \n" )
+while(int(opcion_elegida) > (w - 1) or int(opcion_elegida) < 1): 
 
-
-
+    opcion_elegida = input("\n Porfavor ingrese un numero que este dentro de las opciones: \n" )
 
 
+#Como identificar si una variable es de tipo string o de tipo numero... 
+
+#Por hacer, IF de seleccion, respuestas del bot para que parezca conversacion real
 
 
 
