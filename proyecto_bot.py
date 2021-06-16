@@ -1,3 +1,5 @@
+import random
+
 ############ BOT PROYECTO #################
 
 
@@ -64,8 +66,12 @@ print("Las opciones de conversacion son las siguientes:\n\n")
 
 w = 1 
 
+diccionario = {"gatos": -1, "ciencia": -1, "comida": -1, "medicina": -1}
+
+
 for j in range(len(keywords)):
     if(keywords[j] in input_phrase):
+        diccionario[keywords[j]] = w
         print(str(w) + " Opciones de " + keywords[j] + ":\n")
         w = w + 1
         for k in opciones[j]:
@@ -74,14 +80,75 @@ for j in range(len(keywords)):
 
 opcion_elegida = input("¿De que tema quieres hablar:? \n" )
 
-while(int(opcion_elegida) > (w - 1) or int(opcion_elegida) < 1): 
+while(not opcion_elegida.isnumeric()):
+
+    opcion_elegida = input("\n Porfavor ingrese un numero, non una letra: \n" )
+
+while(int(opcion_elegida) > (w - 1) or int(opcion_elegida) < 1):    
 
     opcion_elegida = input("\n Porfavor ingrese un numero que este dentro de las opciones: \n" )
 
 
-#Como identificar si una variable es de tipo string o de tipo numero... 
 
-#Por hacer, IF de seleccion, respuestas del bot para que parezca conversacion real
+for keys in diccionario:
+    if(int(opcion_elegida) == diccionario[keys]):
+        opcion_elegida = keys 
+        break
+
+
+medicina = [
+"Cuando te sonrojas tambien lo hace el revestimiento de tu estomago.",
+"Tus ojos son siempre del mismo tamaño, pero tu nariz y tus orejas nunca paran de crecer.",
+"Tu nariz puede recordar hasta 50.000 olores. Asimismo, la mujer tiene mejor olfato que el hombre.",
+"Una persona con gripe se vuelve socialmente mas activa. Este es un comportamiento del virus para tratar de propagarse.",
+"Siete segundos es lo que demora la comida en ir de la boca al estomago.",
+"Se estima que en el cuerpo tenemos unos 96,000 kilometros de vasos sanguineos"]
+
+comida = [
+"El amor por el cafe esta en tus genes",
+"Una mazorca siempre tiene un numero par de granos",
+"Las zanahorias no siempre fueron de color naranja",
+"Las setas contienen quitina (al igual que los insectos)",
+"El sandwich fue inventado durante un juego de cartas",
+"La pizza hawaiana fue inventada en Canada"]
+
+ciencia = [
+"La mariposa mas grande del mundo tiene un tamaño de casi medio metro.",
+"Mas hombres que mujeres son daltonicos.",
+"Se robaron el cerebro de Albert Eistein",
+"Las jirafas tienen la lengua azul",
+"Las hormigas son capaces de transportar objetos 50 veces su propio peso corporal",
+"Los humanos no pueden sentir sabor sin saliva"]
+
+gatos = [
+"Los gatos se comunican a traves de vocalizaciones y entre ellas la mas popular es el maullido. Tambien, cabe mencionar que, junto con el perro, son los animales mas populares para escoger como mascota, debido a su adaptabilidad y caracteristicas.",
+"Tienen una flexibilidad y agilidad impresionante, pueden saltar desde mas de 3 metros de altura.",
+"Los gatos pueden rotar sus orejas 180 grados.",
+"Debido a su naturaleza nocturna, los gatos suelen ser mucho mas hiperactivos en la tarde.",
+"En la raza de gato mas grande, el macho promedio pesa aproximadamente 9 kilos.",
+"Los gatos domesticos pasan cerca del 70 por ciento del dia durmiendo, y 15 por ciento del dia acicalandose.",
+"Tienen uno de los sistemas sensoriales mas sofisticados del mundo."]
+
+if opcion_elegida == "ciencia":
+    print(ciencia[random.randint(0, len(ciencia) -1)])
+
+elif opcion_elegida == "medicina":
+    print(medicina[random.randint(0, len(medicina) -1)])    
+
+elif opcion_elegida == "gatos":
+    print(gatos[random.randint(0, len(gatos) -1)])
+
+elif opcion_elegida == "comida":
+    print(comida[random.randint(0, len(comida) -1)])
+
+
+
+
+
+
+
+
+
 
 
 
