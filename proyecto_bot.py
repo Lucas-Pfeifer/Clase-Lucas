@@ -96,38 +96,23 @@ for keys in diccionario:
         break
 
 
-medicina = [
-"Cuando te sonrojas tambien lo hace el revestimiento de tu estomago.",
-"Tus ojos son siempre del mismo tamaño, pero tu nariz y tus orejas nunca paran de crecer.",
-"Tu nariz puede recordar hasta 50.000 olores. Asimismo, la mujer tiene mejor olfato que el hombre.",
-"Una persona con gripe se vuelve socialmente mas activa. Este es un comportamiento del virus para tratar de propagarse.",
-"Siete segundos es lo que demora la comida en ir de la boca al estomago.",
-"Se estima que en el cuerpo tenemos unos 96,000 kilometros de vasos sanguineos"]
 
-comida = [
-"El amor por el cafe esta en tus genes",
-"Una mazorca siempre tiene un numero par de granos",
-"Las zanahorias no siempre fueron de color naranja",
-"Las setas contienen quitina (al igual que los insectos)",
-"El sandwich fue inventado durante un juego de cartas",
-"La pizza hawaiana fue inventada en Canada"]
+def load_list(category, lista, ruta):
+    control = 0
+    listas = open(ruta, "r")
+    for linea in listas:
+        if linea == category and control == 0:
+            control = 1
+        elif control == 1:
+            lista.append(linea)
+    listas.close()
+    return lista
 
-ciencia = [
-"La mariposa mas grande del mundo tiene un tamaño de casi medio metro.",
-"Mas hombres que mujeres son daltonicos.",
-"Se robaron el cerebro de Albert Eistein",
-"Las jirafas tienen la lengua azul",
-"Las hormigas son capaces de transportar objetos 50 veces su propio peso corporal",
-"Los humanos no pueden sentir sabor sin saliva"]
+medicina =  load_list("medicina", [], "listas.txt")
+gatos = load_list("gatos", [], "listas.txt")
+ciencia = load_list("ciencia", [], "listas.txt")
+comida = load_list("comida", [], "listas.txt")
 
-gatos = [
-"Los gatos se comunican a traves de vocalizaciones y entre ellas la mas popular es el maullido. Tambien, cabe mencionar que, junto con el perro, son los animales mas populares para escoger como mascota, debido a su adaptabilidad y caracteristicas.",
-"Tienen una flexibilidad y agilidad impresionante, pueden saltar desde mas de 3 metros de altura.",
-"Los gatos pueden rotar sus orejas 180 grados.",
-"Debido a su naturaleza nocturna, los gatos suelen ser mucho mas hiperactivos en la tarde.",
-"En la raza de gato mas grande, el macho promedio pesa aproximadamente 9 kilos.",
-"Los gatos domesticos pasan cerca del 70 por ciento del dia durmiendo, y 15 por ciento del dia acicalandose.",
-"Tienen uno de los sistemas sensoriales mas sofisticados del mundo."]
 
 if opcion_elegida == "ciencia":
     print(ciencia[random.randint(0, len(ciencia) -1)])
@@ -140,7 +125,6 @@ elif opcion_elegida == "gatos":
 
 elif opcion_elegida == "comida":
     print(comida[random.randint(0, len(comida) -1)])
-
 
 
 
