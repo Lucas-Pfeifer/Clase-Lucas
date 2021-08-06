@@ -68,10 +68,4 @@ notas = {"IIC203": [6.8, 6.0, 6.1, 3.0], "ING2030": [6.8, 6.0, 6.1, 3.0]}
 
 print(notas["IIC203"])
 
-
-count_down = 10
-
-for i in range(11):
-    print(count_down)
-    count_down -= 1
-    time.sleep(1)
+array = [1, 2, 3, 4, 5, 6]
