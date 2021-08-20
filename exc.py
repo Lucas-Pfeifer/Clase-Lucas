@@ -1,15 +1,4 @@
 import time
-# Clase Persona -> Alumno ; Profesor. Sala de Clase
-
-# Persona: rut: int, edad: int, genero: str, nombre_completo: str
-
-    #Profesor: area: str, cursos: list[str]
-    #Alumno: promedio: int, cursos: dic -> key: curso, data: notas
-
-# Sala de clases:  cursos: list[str], personas_presentes[Personas], capacidad
-
-
-#Todas las entidades deben poder ser imprimibles
 
 class Persona():
     rut = 0
@@ -45,27 +34,43 @@ class Profesor(Persona):
         
 class Alumno(Persona):
     promedio = 0
-    cursos = dict()
+    cursos = []
 
-    def __init__(self, rut, edad, genero, nombre, cursos, universidad):
+    def __init__(self, rut, edad, genero, nombre, cursos, universidad, notas):
 
         Persona.__init__(self, rut, edad, genero, nombre)
         self.cursos = cursos
         self.universidad = universidad
+        self.notas = notas
+        self.Promedio()
+        print(self.promedio)
+        #self.promedio = #Llamar a funcion de promedio que actualiza este
 
     def __str__(self):
         t = f'Nombre: {self.nombre} \nEdad: {self.edad}'
         return t
 
-Lucas = Alumno(435345346, 12, "Hombre", "Lucas Pfeifer", ["IIC203", "ING2030", "MAT1010"], "PUC")
-print(Lucas)
+    def Promedio(self):
+        self.notas
+        cantidad_notas = 0
+        suma_notas = 0
+        for i in self.notas:
+            for j in self.notas[i]:
+                suma_notas += j
+                cantidad_notas += 1
+        self.promedio = suma_notas / cantidad_notas 
+
+
+
+
+
+notas = {"IIC203": [6.8, 6.0, 6.1, 3.0], "ING2030": [6.8, 6.0, 6.1, 3.0], "diplomado_danza": [5.4, 3.2, 4.3]}
+
+Lucas = Alumno(435345346, 12, "Hombre", "Lucas Pfeifer", ["IIC203", "ING2030", "MAT1010"], "PUC", notas)
 
 Jirafales = Profesor(3535253, 12, "Hombre", "Profesor Jirafales", "Fisica", ["IIC203", "ING2030", "MAT1010"])
-print(Jirafales)
 
+# diccionario -> [(key, value), ..., (key, value)]
 
-notas = {"IIC203": [6.8, 6.0, 6.1, 3.0], "ING2030": [6.8, 6.0, 6.1, 3.0]}
-
-print(notas["IIC203"])
-
-array = [1, 2, 3, 4, 5, 6]
+for j in notas:
+    print(j, notas[j])
