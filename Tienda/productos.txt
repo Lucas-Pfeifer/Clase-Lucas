@@ -1,0 +1,10 @@
+id;nombre;precio;cantidad
+1;papas fritas;1000;15
+2;yogurt;500;20
+3;jalea;200;40
+4;kapo;150;10
+5;chocman;350;35
+6;super ocho;200;50
+7;negrita;100;15
+8;groso;50;10
+9;rolls;1000;25
