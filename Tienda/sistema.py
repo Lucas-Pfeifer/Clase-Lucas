@@ -38,9 +38,9 @@ for id in carro:
     print(f"Comprando {carro[id]}  {Mi_Tienda.productos[id].nombre} ")
     Mi_Tienda.productos[id].compra(carro[id])
 
-if Respuesta:
+""" if Respuesta:
     print("Compra exitosa")
 if not Respuesta:
-    print("Compra fallida")
+    print("Compra fallida") """
 
 Mi_Tienda.mostrar_stock()
